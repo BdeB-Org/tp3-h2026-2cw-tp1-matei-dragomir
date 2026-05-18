@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Plus - Affiliations</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="en-tete">
+        <a href="#" class="logo">Gym Plus</a>
+        <nav class="navigation">
+            <ul>
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#">Cours</a></li>
+                <li><a href="instructeur.html">Instructeurs</a></li>
+                <li><a href="affiliation.html" class="actif">Affiliations</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="conteneur-principal">
+        <div class="entete-liste">
+            <h1>Registre des Affiliations</h1>
+            <p class="texte-secondaire">Suivi des inscriptions aux cours</p>
+        </div>
+
+        <div class="conteneur-tableau">
+            <table class="tableau-donnees">
+                <thead>
+                    <tr>
+                        <th>Membre</th>
+                        <th>Cours</th>
+                        <th>Instructeur</th>
+                        <th>Date d'inscription</th>
+                    </tr>
+                </thead>
+                <tbody id="corps-tableau">
+                    <tr><td colspan="4" style="text-align:center;">Chargement des données...</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer class="pied-de-page">
+        <div class="conteneur-footer">
+            <p>&copy; 2026 Gym Plus. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/affiliation.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Plus - Instructeurs</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="en-tete">
+        <a href="#" class="logo">Gym Plus</a>
+        <nav class="navigation">
+            <ul>
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#">Cours</a></li>
+                <li><a href="instructeur.html" class="actif">Instructeurs</a></li>
+                <li><a href="affiliation.html">Affiliations</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="conteneur-principal">
+        <section class="section-ajout">
+            <h2>➕ Ajouter un nouvel instructeur</h2>
+            <form id="formulaire-ajout">
+                <div class="grille-formulaire">
+                    <div class="groupe-saisie">
+                        <label for="prenom">Prénom</label>
+                        <input type="text" id="prenom" placeholder="Ex: Marc" required>
+                    </div>
+                    <div class="groupe-saisie">
+                        <label for="nom">Nom</label>
+                        <input type="text" id="nom" placeholder="Ex: Leblanc" required>
+                    </div>
+                    <div class="groupe-saisie">
+                        <label for="specialite">Spécialité</label>
+                        <input type="text" id="specialite" placeholder="Ex: CrossFit" required>
+                    </div>
+                    <div class="groupe-saisie pleine-largeur">
+                        <label for="bio">Biographie</label>
+                        <textarea id="bio" rows="3" placeholder="Description de l'expérience..." required></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="btn-ajouter">Ajouter l'instructeur</button>
+            </form>
+        </section>
+
+        <div class="entete-liste">
+            <h1>L'équipe Gym Plus</h1>
+            <p class="texte-secondaire">Découvrez les profils de nos entraîneurs</p>
+        </div>
+
+        <div class="grille-cartes" id="liste-instructeurs">
+            <p>Chargement des instructeurs...</p>
+        </div>
+    </main>
+
+    <footer class="pied-de-page">
+        <div class="conteneur-footer">
+            <p>&copy; 2026 Gym Plus. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/instructeur.js"></script>
+</body>
+</html>

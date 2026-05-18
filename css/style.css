@@ -1,0 +1,305 @@
+:root {
+    --couleur-primaire: #2563eb;
+    --couleur-danger: #ef4444;
+    --couleur-fond: #f8fafc;
+    --couleur-carte: #ffffff;
+    --texte-principal: #1e293b;
+    --texte-secondaire: #64748b;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: var(--couleur-fond);
+    color: var(--texte-principal);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+.conteneur-principal {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 20px;
+    width: 100%;
+    flex: 1;
+}
+
+.en-tete {
+    background-color: var(--couleur-carte);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--couleur-primaire);
+    text-decoration: none;
+}
+
+.navigation ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: var(--texte-secondaire);
+    font-weight: 600;
+}
+
+.navigation a.actif, .navigation a:hover {
+    color: var(--couleur-primaire);
+}
+
+.section-ajout {
+    background-color: var(--couleur-carte);
+    border-radius: 12px;
+    padding: 30px;
+    margin: 20px auto 40px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    border-top: 4px solid var(--couleur-primaire);
+    max-width: 600px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-ajout h2 {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    color: var(--texte-principal);
+    text-align: center;
+}
+
+#formulaire-ajout {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.grille-formulaire {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.groupe-saisie {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.groupe-saisie.pleine-largeur { grid-column: 1 / -1; }
+
+.groupe-saisie label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--texte-secondaire);
+}
+
+.groupe-saisie input, .groupe-saisie textarea {
+    padding: 10px 15px;
+    border: 1px solid #cbd5e1;
+    resize: none;
+    border-radius: 8px;
+    background: #f8fafc;
+    transition: all 0.2s;
+}
+
+.groupe-saisie input:focus, .groupe-saisie textarea:focus {
+    outline: none;
+    border-color: var(--couleur-primaire);
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.btn-ajouter {
+    margin-top: 20px;
+    background-color: var(--couleur-primaire);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: ease 1s;
+    align-self: center;
+}
+
+.btn-ajouter:hover { background-color: #1d4ed8; }
+
+.entete-liste {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.entete-liste h1 {
+    font-size: 2.5rem;
+    color: var(--texte-principal);
+}
+
+.texte-secondaire {
+    color: var(--texte-secondaire);
+}
+
+.grille-cartes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.carte {
+    background: var(--couleur-carte);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.carte:hover { transform: translateY(-5px); }
+
+.btn-supprimer {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: var(--couleur-danger);
+    color: white;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(239, 68, 68, 0.4);
+    z-index: 10;
+    transition: transform 0.2s;
+}
+
+.btn-supprimer:hover { transform: scale(1.1); }
+
+.carte-couverture {
+    height: 120px;
+    background: linear-gradient(135deg, #60a5fa, #2563eb);
+}
+
+.carte-profil {
+    width: 90px;
+    height: 90px;
+    background-color: #e2e8f0;
+    border-radius: 50%;
+    border: 4px solid var(--couleur-carte);
+    margin: -45px auto 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: var(--texte-secondaire);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.carte-corps {
+    padding: 0 25px 25px;
+    text-align: center;
+}
+
+.carte-nom {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.carte-specialite {
+    display: inline-block;
+    background: #f1f5f9;
+    color: #475569;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.carte-bio {
+    font-size: 14px;
+    color: var(--texte-secondaire);
+    margin-bottom: 20px;
+}
+
+.pied-de-page {
+    background-color: var(--couleur-carte);
+    border-top: 1px solid #e2e8f0;
+    padding: 30px 20px;
+    text-align: center;
+    margin-top: auto;
+}
+
+.conteneur-footer p {
+    color: var(--texte-principal);
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.conteneur-footer {
+    font-size: 13px;
+    color: var(--texte-secondaire);
+    font-weight: normal;
+}
+
+.conteneur-tableau {
+    background-color: var(--couleur-carte);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.tableau-donnees {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.tableau-donnees th {
+    background-color: #f1f5f9;
+    color: var(--texte-principal);
+    font-weight: 600;
+    padding: 15px 20px;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.tableau-donnees td {
+    padding: 15px 20px;
+    border-bottom: 1px solid #e2e8f0;
+    color: var(--texte-secondaire);
+}
+
+.tableau-donnees tr:last-child td {
+    border-bottom: none;
+}
+
+.tableau-donnees tr:hover {
+    background-color: #f8fafc;
+}
+
+.tableau-donnees td strong {
+    color: var(--couleur-primaire);
+}
