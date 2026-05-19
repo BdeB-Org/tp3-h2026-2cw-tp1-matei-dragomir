@@ -24,6 +24,9 @@ async function chargerCours() {
                     <p><strong>Niveau :</strong> ${c.niveau}</p>
                     <p><strong>Capacité :</strong> ${c.capacite_max}</p>
                     <p><strong>Instructeur :</strong> ${c.id_instructeur}</p>
+                    <a href="detail-cours.html?id=${c.id_cours}" class="btn-ajouter" style="display:inline-block; margin-top:15px; text-decoration:none; text-align:center;">
+                        Détails
+                    </a>
                 </div>
             `;
 
