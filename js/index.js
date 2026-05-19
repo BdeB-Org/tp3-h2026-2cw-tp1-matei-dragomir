@@ -1,11 +1,9 @@
-import { getAll } from "./api.js";
-
 async function chargerCours() {
     const liste = document.getElementById("liste-cours");
     liste.innerHTML = "<p>Chargement...</p>";
 
     try {
-        const cours = await getAll("cours");
+        const cours = await getAll("vue_cours_complet");
 
         if (cours.length === 0) {
             liste.innerHTML = "<p>Aucun cours trouvé.</p>";
@@ -23,7 +21,7 @@ async function chargerCours() {
                     <h3 class="carte-nom">${c.titre}</h3>
                     <p><strong>Niveau :</strong> ${c.niveau}</p>
                     <p><strong>Capacité :</strong> ${c.capacite_max}</p>
-                    <p><strong>Instructeur :</strong> ${c.id_instructeur}</p>
+                    <p><strong>Instructeur :</strong> ${c.nom_instructeur}</p>
                 </div>
             `;
 
