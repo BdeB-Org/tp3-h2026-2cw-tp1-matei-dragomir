@@ -1,5 +1,3 @@
-import { getAll } from "./api.js";
-
 async function chargerDetailCours() {
     const params = new URLSearchParams(window.location.search);
     const id = parseInt(params.get("id"));
